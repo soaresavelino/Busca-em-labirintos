@@ -31,7 +31,6 @@ class LabirintoColeta:
             for j in range(self.largura):
                 char = linhas[i][j] if j < len(linhas[i]) else " "
 
-                # BLINDAGEM: Apenas '#' é tratado rigidamente como parede.
                 if char == "#":
                     linha_grid.append(True)
                 elif char in ("A", "S"):
@@ -122,7 +121,6 @@ class LabirintoColeta:
         return novo
 
     def imprimir_rota(self, rota):
-        # 1. LINHA RESUMIDA (Padrão exato do Gabriel: A(Início) -> C1 -> C3 -> B(Objetivo))
         if not rota:
             print("\n➡ ROTA SEGUIDA: A (Início) ➔ B (Objetivo)")
         else:
@@ -132,7 +130,6 @@ class LabirintoColeta:
             passo_a_passo.append("B (Objetivo)")
             print("\n➡ ROTA SEGUIDA: " + " ➔ ".join(passo_a_passo))
 
-        # 2. TABELA DE OTIMIZAÇÃO COM IDENTIFICADORES 'C'
         print("+" + "-"*7 + "+" + "-"*16 + "+" + "-"*16 + "+" + "-"*14 + "+" + "-"*17 + "+")
         print(f"| {'Etapa':<5} | {'Origem':<14} | {'Destino':<14} | {'Custo Trecho':<12} | {'Custo Total':<15} |")
         print("+" + "-"*7 + "+" + "-"*16 + "+" + "-"*16 + "+" + "-"*14 + "+" + "-"*17 + "+")
@@ -146,14 +143,12 @@ class LabirintoColeta:
         custo_acumulado = 0
         etapa = 1
 
-        # Trecho 1: A (Início) até a primeira coleta C
         p_at = self.inicio
         p_prox = self.coletas[rota[0]]
         custo_trecho = self.matriz_distancias[p_at].get(p_prox, math.inf)
         custo_acumulado += custo_trecho
         print(f"| {etapa:<5} | {'A (Início)':<14} | {f'C{rota[0]}':<14} | {custo_trecho:<12} | {custo_acumulado:<15} |")
 
-        # Trechos intermediários: De C para C
         for i in range(len(rota) - 1):
             etapa += 1
             p_at = self.coletas[rota[i]]
@@ -162,7 +157,6 @@ class LabirintoColeta:
             custo_acumulado += custo_trecho
             print(f"| {etapa:<5} | {f'C{rota[i]}':<14} | {f'C{rota[i+1]}':<14} | {custo_trecho:<12} | {custo_acumulado:<15} |")
 
-        # Último Trecho: Última coleta C até o objetivo B
         etapa += 1
         p_at = self.coletas[rota[-1]]
         p_prox = self.objetivo
@@ -235,10 +229,6 @@ class LabirintoColeta:
 
         return melhor, melhor_custo, historico
 
-
-# =====================================================
-# GERADOR AUXILIAR DE CENÁRIOS
-# =====================================================
 def generar_mapa_aleatorio_dinamico(filename: str, num_coletas: int = 7, altura: int = 14, largura: int = 35):
     random.seed(time.time_ns())
     while True:
@@ -283,10 +273,6 @@ def generar_mapa_aleatorio_dinamico(filename: str, num_coletas: int = 7, altura:
             print(f"\n[+] Novo mapa salvo com sucesso em: '{filename}'")
             break
 
-
-# =====================================================
-# MENU DE SELEÇÃO INTERATIVO
-# =====================================================
 def executar_busca_local():
     os.makedirs("graficos", exist_ok=True)
     os.makedirs("mapas", exist_ok=True)
@@ -344,7 +330,7 @@ def executar_busca_local():
     lab.imprimir_rota(rota_sa)
     print(f"Tempo de execução: {tempo_sa:.4f}s")
 
-    # ANÁLISE COMPARATIVA
+    #ANÁLISE COMPARATIVA
     print("\n" + "=" * 50 + "\nANÁLISE\n" + "=" * 50)
     if custo_sa < custo_hc:
         print(f"Simulated Annealing foi MELHOR (Custo {custo_sa} contra {custo_hc} do HC).")
@@ -353,7 +339,7 @@ def executar_busca_local():
     else:
         print(f"Empate técnico! Ambos acharam o mesmo custo final de {custo_hc}.")
 
-    # GERAÇÃO DOS GRÁFICOS
+    #GERAÇÃO DOS GRÁFICOS
     if custo_hc != math.inf and custo_sa != math.inf and len(lab.coletas) >= 2:
         plt.figure(figsize=(12, 6))
         plt.plot(hist_hc, label=f"HC ({custo_hc})", linewidth=2, marker="o", markevery=max(1, len(hist_hc)//5))
