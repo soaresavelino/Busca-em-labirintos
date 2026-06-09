@@ -90,8 +90,7 @@ class LabirintoBusca:
                 resultado.append((acao, (l, c), custo))
         return resultado
 
-    # ... (os métodos h, reconstruir, busca_largura, busca_profundidade e busca_prioridade 
-    # permanecem exatamente como estavam, pois a lógica de busca está correta)
+
     
     def h(self, estado: Estado) -> float:
         return abs(estado[0] - self.objetivo[0]) + abs(estado[1] - self.objetivo[1])
@@ -108,8 +107,7 @@ class LabirintoBusca:
         acoes.reverse()
         return estados, acoes
     
-    # [Manter seus métodos de busca (busca_largura, busca_prioridade, etc.) inalterados aqui]
-    # ...
+    
 
     def busca_largura(self) -> ResultadoBusca:
         start_time = time.time()
