@@ -190,5 +190,6 @@ def executar_semana3():
 
 
 if __name__ == '__main__':
+    
     executar_semana1()
    
