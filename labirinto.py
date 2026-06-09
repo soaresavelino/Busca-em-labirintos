@@ -109,7 +109,7 @@ class LabirintoBusca:
     
     
 
-    def busca_largura(self) -> ResultadoBusca:
+    def busca_largura(self) -> ResultadoBusca: 
         start_time = time.time()
         inicio = No(self.inicio)
         fronteira = deque([inicio])

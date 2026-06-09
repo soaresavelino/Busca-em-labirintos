@@ -1,16 +1,16 @@
 Labirinto,Algoritmo,Sucesso,Custo,Passos,Explorados,Expandidos,Tempo(ms),Fronteira
-Labirinto 1  Pequeno  (21x21),Busca em Largura (BFS),Sim,66.0,62,139,138,1.229,4
-Labirinto 1  Pequeno  (21x21),Busca em Profundidade (DFS),Sim,66.0,62,215,214,0.000,6
-Labirinto 1  Pequeno  (21x21),Busca de Custo Uniforme (UCS),Sim,66.0,62,139,138,1.015,4
-Labirinto 1  Pequeno  (21x21),Busca Gulosa (Greedy),Sim,66.0,62,122,121,0.000,4
-Labirinto 1  Pequeno  (21x21),Busca A*,Sim,66.0,62,129,128,0.000,4
-Labirinto 2  Medio    (41x41),Busca em Largura (BFS),Sim,384.0,380,662,661,1.020,5
-Labirinto 2  Medio    (41x41),Busca em Profundidade (DFS),Sim,384.0,380,606,605,2.086,7
-Labirinto 2  Medio    (41x41),Busca de Custo Uniforme (UCS),Sim,384.0,380,662,661,2.037,5
-Labirinto 2  Medio    (41x41),Busca Gulosa (Greedy),Sim,384.0,380,494,493,1.024,9
-Labirinto 2  Medio    (41x41),Busca A*,Sim,384.0,380,632,631,2.060,5
-Labirinto 3  Grande   (61x61),Busca em Largura (BFS),Sim,844.0,836,1727,1726,4.151,10
-Labirinto 3  Grande   (61x61),Busca em Profundidade (DFS),Sim,844.0,836,1717,1716,4.096,18
-Labirinto 3  Grande   (61x61),Busca de Custo Uniforme (UCS),Sim,844.0,836,1727,1726,5.187,10
-Labirinto 3  Grande   (61x61),Busca Gulosa (Greedy),Sim,844.0,836,1000,999,2.055,18
-Labirinto 3  Grande   (61x61),Busca A*,Sim,844.0,836,1559,1558,4.601,8
+Labirinto 1  Pequeno  (21x21),Busca em Largura (BFS),Sim,62.0,62,139,138,1.050,4
+Labirinto 1  Pequeno  (21x21),Busca em Profundidade (DFS),Sim,62.0,62,215,214,0.000,6
+Labirinto 1  Pequeno  (21x21),Busca de Custo Uniforme (UCS),Sim,62.0,62,139,138,1.015,4
+Labirinto 1  Pequeno  (21x21),Busca Gulosa (Greedy),Sim,62.0,62,122,121,0.000,4
+Labirinto 1  Pequeno  (21x21),Busca A*,Sim,62.0,62,129,128,0.000,4
+Labirinto 2  Medio    (41x41),Busca em Largura (BFS),Sim,380.0,380,747,746,2.045,9
+Labirinto 2  Medio    (41x41),Busca em Profundidade (DFS),Sim,380.0,380,691,690,2.044,8
+Labirinto 2  Medio    (41x41),Busca de Custo Uniforme (UCS),Sim,380.0,380,747,746,2.045,9
+Labirinto 2  Medio    (41x41),Busca Gulosa (Greedy),Sim,380.0,380,494,493,2.076,9
+Labirinto 2  Medio    (41x41),Busca A*,Sim,380.0,380,683,682,1.022,8
+Labirinto 3  Grande   (61x61),Busca em Largura (BFS),Sim,836.0,836,1727,1726,5.098,10
+Labirinto 3  Grande   (61x61),Busca em Profundidade (DFS),Sim,836.0,836,1717,1716,4.086,18
+Labirinto 3  Grande   (61x61),Busca de Custo Uniforme (UCS),Sim,836.0,836,1727,1726,4.210,10
+Labirinto 3  Grande   (61x61),Busca Gulosa (Greedy),Sim,836.0,836,1000,999,3.084,18
+Labirinto 3  Grande   (61x61),Busca A*,Sim,836.0,836,1559,1558,5.109,8

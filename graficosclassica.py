@@ -65,31 +65,5 @@ if __name__ == "__main__":
         import matplotlib.pyplot as plt
 import numpy as np
 
-def gerar_grafico_comparativo():
-   
-    algoritmos = ['BFS', 'DFS', 'UCS', 'Gulosa', 'A*']
-  
-    custos_custo1 = [8.0, 14.0, 8.0, 8.0, 8.0]    
-    custos_custo5 = [10.0, 14.0, 8.0, 8.0, 8.0]   
-
-    x = np.arange(len(algoritmos))
-    largura = 0.35
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    rects1 = ax.bar(x - largura/2, custos_custo1, largura, label='Cenário Custo 1.0')
-    rects2 = ax.bar(x + largura/2, custos_custo5, largura, label='Cenário Custo 5.0')
-
-    ax.set_ylabel('Custo Total do Caminho')
-    ax.set_title('Comparativo: Impacto do Custo de Terreno nos Algoritmos')
-    ax.set_xticks(x)
-    ax.set_xticklabels(algoritmos)
-    ax.legend()
-
-    ax.bar_label(rects1, padding=3)
-    ax.bar_label(rects2, padding=3)
-
-    plt.tight_layout()
-    plt.show()
 
 # Chame esta função após ter rodado seus testes nos dois mapas
-gerar_grafico_comparativo()
